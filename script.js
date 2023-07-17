@@ -14,12 +14,15 @@ function fetchData() {
                     const overlayElement = document.createElement('div');
                     overlayElement.classList.add('overlay');
                     const primaryNameElement = document.createElement('p');
+                    primaryNameElement.classList.add('primary-name');
                     const englishNameElement = document.createElement('p');
                     const statusElement = document.createElement('p');
+
                     const photoCreditElement = document.createElement('p');
+                    photoCreditElement.classList.add('credit');
 
                     const statusDot = document.createElement('span');
-                    statusDot.classList.add('dot');
+                    statusDot.classList.add('status-dot');
 
                     imageElement.src = bird.photo.source;
                     imageElement.alt = bird.primary_name;
@@ -27,12 +30,12 @@ function fetchData() {
                     primaryNameElement.textContent = bird.primary_name;
                     englishNameElement.textContent = bird.english_name;
                     statusElement.textContent = bird.status;
-                    photoCreditElement.textContent = `Photo Credit: ${bird.photo.credit}`;
+                    photoCreditElement.textContent = bird.photo.credit;
 
                     overlayElement.appendChild(primaryNameElement);
                     overlayElement.appendChild(englishNameElement);
                     overlayElement.appendChild(statusElement);
-                    overlayElement.appendChild(photoCreditElement);
+                    birdElement.appendChild(photoCreditElement);
                     birdElement.appendChild(imageElement);
                     birdElement.appendChild(overlayElement);
                     birdElement.appendChild(statusDot);

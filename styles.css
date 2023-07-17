@@ -30,11 +30,12 @@ footer {
 .sidebar {
     min-width: 250px;
     object-fit: contain;
-    padding: 20px;
-    background-color: #ffffff;
+    padding-left: 20px;
+    margin-right: 5px;
+    background-color: #b69e808c;
     position: sticky;
     top: 0;
-    height: calc(85vh - 50px);
+    height: 100vh;
     overflow-y: auto;
 }
 
@@ -89,13 +90,26 @@ footer {
     }
 }
 
-.dot {
-    width: 20px;
-    height: 20px;
+.status-dot {
+    width: 25px;
+    height: 25px;
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: black;
     border-radius: 50%;
+    border: 2px solid white;
     display: inline-block;
+}
+
+.credit {
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    color: white;
+    font-size: small;
+}
+
+.primary-name {
+    font-size: large;
+    font-weight: 500;
 }
