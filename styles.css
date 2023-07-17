@@ -167,3 +167,12 @@ footer {
 .datdef-dot {
     background-color: black;
 }
+
+hr {
+    border: 0;
+    width: 75%;
+    margin-left: 10%;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
