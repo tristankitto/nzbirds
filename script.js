@@ -18,12 +18,15 @@ function fetchData() {
                     const statusElement = document.createElement('p');
                     const photoCreditElement = document.createElement('p');
 
+                    const statusDot = document.createElement('span');
+                    statusDot.classList.add('dot');
+
                     imageElement.src = bird.photo.source;
                     imageElement.alt = bird.primary_name;
 
                     primaryNameElement.textContent = bird.primary_name;
-                    englishNameElement.textContent = `English Name: ${bird.english_name}`;
-                    statusElement.textContent = `Conservation Status: ${bird.status}`;
+                    englishNameElement.textContent = bird.english_name;
+                    statusElement.textContent = bird.status;
                     photoCreditElement.textContent = `Photo Credit: ${bird.photo.credit}`;
 
                     overlayElement.appendChild(primaryNameElement);
@@ -32,6 +35,7 @@ function fetchData() {
                     overlayElement.appendChild(photoCreditElement);
                     birdElement.appendChild(imageElement);
                     birdElement.appendChild(overlayElement);
+                    birdElement.appendChild(statusDot);
                     birdsContainer.appendChild(birdElement);
                 });
             }
