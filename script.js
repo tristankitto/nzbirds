@@ -23,6 +23,7 @@ function fetchData() {
 
                     const statusDot = document.createElement('span');
                     statusDot.classList.add('status-dot');
+                    statusDot.classList.add('photo-dot');
 
                     imageElement.src = bird.photo.source;
                     imageElement.alt = bird.primary_name;
@@ -30,31 +31,31 @@ function fetchData() {
                     const status = bird.status;
                     switch (status) {
                         case 'Not Threatened':
-                            statusDot.style.backgroundColor = '#02a028';
+                            statusDot.classList.add('notthr-dot');
                             break;
                         case 'Naturally Uncommon':
-                            statusDot.style.backgroundColor = '#649a31';
+                            statusDot.classList.add('natunc-dot');
                             break;
                         case 'Relict':
-                            statusDot.style.backgroundColor = '#99cb68';
+                            statusDot.classList.add('rel-dot');
                             break;
                         case 'Recovering':
-                            statusDot.style.backgroundColor = '#fecc33';
+                            statusDot.classList.add('rec-dot');
                             break;
                         case 'Declining':
-                            statusDot.style.backgroundColor = '#fe9a01';
+                            statusDot.classList.add('dec-dot');
                             break;
                         case 'Nationally Increasing':
-                            statusDot.style.backgroundColor = '#c26967';
+                            statusDot.classList.add('natinc-dot');
                             break;
                         case 'Nationally Vulnerable':
-                            statusDot.style.backgroundColor = '#9b0000';
+                            statusDot.classList.add('natvul-dot');
                             break;
                         case 'Nationally Endangered':
-                            statusDot.style.backgroundColor = '#660032';
+                            statusDot.classList.add('natend-dot');
                             break;
                         case 'Nationally Critical':
-                            statusDot.style.backgroundColor = '#320033';
+                            statusDot.classList.add('natcri-dot');
                             break;
                         default:
                             statusDot.style.backgroundColor = 'black';
