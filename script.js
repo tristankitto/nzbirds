@@ -14,7 +14,7 @@ function fetchData() {
                     const overlayElement = document.createElement('div');
                     overlayElement.classList.add('overlay');
                     const primaryNameElement = document.createElement('p');
-                    primaryNameElement.classList.add('primary-name');
+                    primaryNameElement.id = 'primary-name';
                     const englishNameElement = document.createElement('p');
                     const statusElement = document.createElement('p');
 
@@ -31,34 +31,54 @@ function fetchData() {
                     const status = bird.status;
                     switch (status) {
                         case 'Not Threatened':
-                            statusDot.classList.add('notthr-dot');
+                            document.querySelector('.notthr-dot').style.backgroundColor = '#02a028';
+                            statusDot.style.backgroundColor = '#02a028';
+                            overlayElement.style.backgroundColor = '#02a028d0';
                             break;
                         case 'Naturally Uncommon':
-                            statusDot.classList.add('natunc-dot');
+                            document.querySelector('.natunc-dot').style.backgroundColor = '#649a31';
+                            statusDot.style.backgroundColor = '#649a31';
+                            overlayElement.style.backgroundColor = '#649a31d0';
                             break;
                         case 'Relict':
-                            statusDot.classList.add('rel-dot');
+                            document.querySelector('.rel-dot').style.backgroundColor = '#99cb68';
+                            statusDot.style.backgroundColor = '#99cb68';
+                            overlayElement.style.backgroundColor = '#99cb68d0';
                             break;
                         case 'Recovering':
-                            statusDot.classList.add('rec-dot');
+                            document.querySelector('.rec-dot').style.backgroundColor = '#fecc33';
+                            statusDot.style.backgroundColor = '#fecc33';
+                            overlayElement.style.backgroundColor = '#fecc33d0';
                             break;
                         case 'Declining':
-                            statusDot.classList.add('dec-dot');
+                            document.querySelector('.dec-dot').style.backgroundColor = '#fe9a01';
+                            statusDot.style.backgroundColor = '#fe9a01';
+                            overlayElement.style.backgroundColor = '#fe9a01d0';
                             break;
                         case 'Nationally Increasing':
-                            statusDot.classList.add('natinc-dot');
+                            document.querySelector('.natinc-dot').style.backgroundColor = '#c26967';
+                            statusDot.style.backgroundColor = '#c26967';
+                            overlayElement.style.backgroundColor = '#c26967d0';
                             break;
                         case 'Nationally Vulnerable':
-                            statusDot.classList.add('natvul-dot');
+                            document.querySelector('.natvul-dot').style.backgroundColor = '#9b0000';
+                            statusDot.style.backgroundColor = '#9b0000';
+                            overlayElement.style.backgroundColor = '#9b0000d0';
                             break;
                         case 'Nationally Endangered':
-                            statusDot.classList.add('natend-dot');
+                            document.querySelector('.natend-dot').style.backgroundColor = '#660032';
+                            statusDot.style.backgroundColor = '#660032';
+                            overlayElement.style.backgroundColor = '#660032d0';
                             break;
                         case 'Nationally Critical':
-                            statusDot.classList.add('natcri-dot');
+                            document.querySelector('.natcri-dot').style.backgroundColor = '#320033';
+                            statusDot.style.backgroundColor = '#320033';
+                            overlayElement.style.backgroundColor = '#320033d0';
                             break;
                         default:
+                            document.querySelector('.datdef-dot').style.backgroundColor = 'black';
                             statusDot.style.backgroundColor = 'black';
+                            overlayElement.style.backgroundColor = '#000000d0';
                             break;
                     }
 

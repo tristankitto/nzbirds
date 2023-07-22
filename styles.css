@@ -6,18 +6,12 @@ body {
 
 header,
 footer {
-    background-color: #4cdada;
-    color: #000000ab;
+    background-color: #4baf31;
+    color: #ffffffbd;
     text-align: center;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 1px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     min-width: 98vw;
-}
-
-footer {
-    margin-top: 5px;
 }
 
 .container {
@@ -28,11 +22,12 @@ footer {
 
 .sidebar {
     min-width: 200px;
+    max-width: 300px;
     min-height: 95vh;
     object-fit: contain;
     padding-left: 15px;
-    margin-right: 5px;
-    background-color: #b69e8071;
+    box-shadow: 1px 0 5px #00000079;
+    background-color: #9dc18356;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -41,8 +36,11 @@ footer {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     overflow: hidden;
 }
@@ -51,7 +49,8 @@ footer {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    max-width: 400px;
+    min-width: 5px;
+    max-width: 500px;
     height: 500px;
     border-radius: 15px;
     overflow: hidden;
@@ -61,7 +60,7 @@ footer {
 .grid-item img {
     width: 100%;
     height: 75%;
-    min-width: 275px;
+    min-width: 5px;
     object-fit: cover;
     display: block;
 }
@@ -69,29 +68,22 @@ footer {
 .overlay {
     position: absolute;
     width: 80%;
-    height: 20%;
-    color: #000000;
+    height: 100%;
+    color: #ffffff;
     padding: 5% 10%;
-    font-size: 12px;
+}
+
+#primary-name {
+    font-size: 30px;
 }
 
 .overlay p {
     margin: 0;
 }
 
-@media (max-width: 1140px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 860px) {
     .grid-container {
         grid-template-columns: 1fr;
-    }
-
-    .grid-item img {
-        min-width: 300px;
     }
 }
 
@@ -103,7 +95,7 @@ footer {
     padding: 5px;
     color: white;
     font-size: small;
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .primary-name {
@@ -135,51 +127,10 @@ footer {
     height: 15px;
 }
 
-.notthr-dot {
-    background-color: #02a028;
-}
-
-.natunc-dot {
-    background-color: #649a31;
-}
-
-.rel-dot {
-    background-color: #99cb68;
-}
-
-.rec-dot {
-    background-color: #fecc33;
-}
-
-.dec-dot {
-    background-color: #fe9a01;
-}
-
-.natinc-dot {
-    background-color: #c26967;
-}
-
-.natvul-dot {
-    background-color: #9b0000;
-}
-
-.natend-dot {
-    background-color: #660032;
-}
-
-.natcri-dot {
-    background-color: #320033;
-}
-
-.ext-dot,
-.datdef-dot {
-    background-color: black;
-}
-
 hr {
     border: 0;
     width: 75%;
-    margin-left: 10%;
+    margin-left: 9%;
     height: 1px;
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
