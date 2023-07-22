@@ -123,10 +123,12 @@ function toggleSidebar() {
 
 hamburgerIcon.addEventListener('click', toggleSidebar);
 
+const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
 function handleWindowResize() {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < (40 * fontSize)) {
         sidebar.style.display = 'none';
-    } else if (window.innerWidth >= 600) {
+    } else if (window.innerWidth >= (40 * fontSize)) {
         sidebar.style.display = 'block';
     }
 }

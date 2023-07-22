@@ -58,7 +58,7 @@ footer {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    min-width: 5px;
+    min-width: 100px;
     max-width: 500px;
     height: 500px;
     border-radius: 15px;
@@ -96,14 +96,14 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 40em) {
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .grid-item {
-        width: 175px;
+        width: 200px;
         height: 250px;
         font-size: x-small;
     }
@@ -139,12 +139,12 @@ footer {
         top: 80px;
         bottom: 100vh;
         overflow-y: hidden;
-        height: 80vh;
+        min-height: 80vh;
         width: 100vw;
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 40em) {
 
     /* Show the sidebar and hide the hamburger icon when the screen width is below 768px */
     .sidebar {
