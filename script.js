@@ -104,3 +104,31 @@ function fetchData() {
 }
 
 fetchData();
+
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const sidebar = document.querySelector('.sidebar');
+const gridContainer = document.querySelector('.grid-container');
+
+function toggleSidebar() {
+    if (sidebar.style.display === 'none') {
+        sidebar.style.display = 'block';
+        gridContainer.style.display = 'none';
+        document.body.style.overflowY = 'hidden';
+    } else {
+        sidebar.style.display = 'none';
+        gridContainer.style.display = 'grid';
+        document.body.style.overflowY = 'visible';
+    }
+}
+
+hamburgerIcon.addEventListener('click', toggleSidebar);
+
+function handleWindowResize() {
+    if (window.innerWidth < 600) {
+        sidebar.style.display = 'none';
+    } else if (window.innerWidth >= 600) {
+        sidebar.style.display = 'block';
+    }
+}
+
+window.addEventListener('resize', handleWindowResize);

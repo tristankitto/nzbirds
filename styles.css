@@ -20,10 +20,20 @@ footer {
     min-height: 100vh;
 }
 
+.hamburger-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+
 .sidebar {
+    display: none;
     min-width: 200px;
-    max-width: 300px;
-    min-height: 95vh;
     object-fit: contain;
     padding-left: 15px;
     box-shadow: 1px 0 5px #00000079;
@@ -39,8 +49,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
     position: relative;
     overflow: hidden;
 }
@@ -84,6 +93,70 @@ footer {
 @media (max-width: 860px) {
     .grid-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-item {
+        width: 175px;
+        height: 250px;
+        font-size: x-small;
+    }
+
+    #primary-name {
+        font-size: medium;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        display: block;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+        z-index: 9999;
+    }
+
+    footer {
+        position: sticky;
+        bottom: 0;
+        overflow-y: auto;
+        z-index: 9999;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 80px;
+        bottom: 100vh;
+        overflow-y: hidden;
+        height: 80vh;
+        width: 100vw;
+    }
+}
+
+@media (min-width: 600px) {
+
+    /* Show the sidebar and hide the hamburger icon when the screen width is below 768px */
+    .sidebar {
+        display: block;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+
+    .container {
+        display: grid;
     }
 }
 
