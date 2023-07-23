@@ -19,10 +19,16 @@ function fetchData() {
                     const imageElement = document.createElement('img');
                     const overlayElement = document.createElement('div');
                     overlayElement.classList.add('overlay');
+                    const secondaryInfo = document.createElement('div');
+                    secondaryInfo.classList.add('secondary-info');
                     const primaryNameElement = document.createElement('p');
                     primaryNameElement.id = 'primary-name';
                     const englishNameElement = document.createElement('p');
+                    englishNameElement.id = 'english-name';
                     const statusElement = document.createElement('p');
+                    const scientificNameElement = document.createElement('p');
+                    const weightElement = document.createElement('p');
+                    const lengthElement = document.createElement('p');
 
                     const photoCreditElement = document.createElement('p');
                     photoCreditElement.classList.add('credit');
@@ -90,12 +96,20 @@ function fetchData() {
 
                     primaryNameElement.textContent = bird.primary_name;
                     englishNameElement.textContent = bird.english_name;
-                    statusElement.textContent = status;
+                    statusElement.textContent = 'Status: ' + status;
+                    scientificNameElement.textContent = 'Scientific Name: ' + bird.scientific_name;
+                    weightElement.textContent = 'Weight: ' + bird.size.weight.value + bird.size.weight.units;
+                    lengthElement.textContent = 'Length: ' + bird.size.length.value + bird.size.length.units;
+
                     photoCreditElement.textContent = bird.photo.credit;
 
-                    overlayElement.appendChild(primaryNameElement);
                     overlayElement.appendChild(englishNameElement);
-                    overlayElement.appendChild(statusElement);
+                    secondaryInfo.appendChild(statusElement);
+                    secondaryInfo.appendChild(scientificNameElement);
+                    secondaryInfo.appendChild(weightElement);
+                    secondaryInfo.appendChild(lengthElement);
+                    overlayElement.appendChild(secondaryInfo);
+                    birdElement.appendChild(primaryNameElement);
                     birdElement.appendChild(photoCreditElement);
                     birdElement.appendChild(imageElement);
                     birdElement.appendChild(overlayElement);
