@@ -35,8 +35,9 @@ footer {
 
 .hamburger-icon {
     position: absolute;
-    top: 30%;
+    top: 29%;
     left: 5%;
+    width: 2px;
     font-size: 24px;
     color: black;
     background: none;
