@@ -128,13 +128,41 @@ fetchData();
 //filter birds based on given inputs
 function filter() {
     const searchInput = document.getElementById('filterInput');
-    const searchTerm = searchInput.value.toLowerCase();
+    const searchTerm = searchInput.value.toLowerCase().normalize('NFC');
 
-    const filteredBirds = birdsData.filter(bird => bird.primary_name.toLowerCase().includes(searchTerm));
+    const filteredBirds = birdsData.filter(bird => {
+        const primaryName = bird.primary_name.toLowerCase().normalize('NFC');
+        const englishName = bird.english_name.toLowerCase();
+        const scientificName = bird.scientific_name.toLowerCase();
+        const order = bird.order.toLowerCase();
+        const family = bird.family.toLowerCase();
+
+        const maoriCharacters = {
+            'ā': 'a',
+            'ē': 'e',
+            'ī': 'i',
+            'ō': 'o',
+            'ū': 'u',
+        };
+
+        normalizedPrimaryName = primaryName.replace(/[āēīōū]/g, match => maoriCharacters[match]);
+
+        // Check if any of the fields match the search term
+        return (
+            normalizedPrimaryName.includes(searchTerm) ||
+            englishName.includes(searchTerm) ||
+            scientificName.includes(searchTerm) ||
+            order.includes(searchTerm) ||
+            family.includes(searchTerm)
+        );
+    });
+
     showBirds(filteredBirds);
 }
 
-document.getElementById('filterInput').addEventListener('input', filter);
+
+
+document.getElementById('filter-button').addEventListener('click', filter);
 
 //handle sidebar when in mobile mode
 const hamburgerIcon = document.querySelector('.hamburger-icon');
