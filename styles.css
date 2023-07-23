@@ -103,13 +103,18 @@ footer {
 }
 
 #primary-name {
+    margin: 0;
     max-width: 45%;
+    text-align: center;
     font-size: 35px;
     position: absolute;
-    bottom: 22%;
+    bottom: 26%;
     left: 2%;
     color: white;
-    text-shadow: 4px 4px 5px black;
+    text-shadow: 4px 4px 10px black;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15%;
+    padding: 1%;
 }
 
 #english-name {
@@ -123,13 +128,13 @@ footer {
 .credit {
     position: absolute;
     max-width: 45%;
-    bottom: 26%;
+    bottom: 24%;
     right: 4px;
-    margin: 5px;
-    padding: 5px;
+    padding: 1%;
     color: white;
     font-size: small;
     background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10%;
 }
 
 .primary-name {

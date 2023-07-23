@@ -272,7 +272,7 @@
             },
             "weight": {
                 "value": 900.0,
-                "units": "1100"
+                "units": "g"
             }
         }
     },
@@ -558,7 +558,7 @@
             },
             "weight": {
                 "value": 41.0,
-                "units": "52"
+                "units": "g"
             }
         }
     },
@@ -590,7 +590,7 @@
             },
             "weight": {
                 "value": 426.0,
-                "units": "340"
+                "units": "g"
             }
         }
     },
