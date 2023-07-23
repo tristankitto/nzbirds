@@ -1,11 +1,16 @@
+//define variables used inside fetchData function so they can be used again outside it.
+let birdsData = [];
+let showBirds;
+
+//fetch data from JSON file and create each bird on page
 function fetchData() {
     fetch('nzbird.json')
         .then(response => response.json())
         .then(data => {
             const birdsContainer = document.getElementById("birdsContainer");
-            let birdsData = data;
+            birdsData = data;
 
-            function showBirds(birds) {
+            showBirds = function (birds) {
                 birdsContainer.innerHTML = '';
 
                 birds.forEach(bird => {
@@ -99,22 +104,25 @@ function fetchData() {
                 });
             }
 
-            function filter() {
-                const searchInput = document.getElementById('filterInput');
-                const searchTerm = searchInput.value.toLowerCase();
-
-                const filteredBirds = birdsData.filter(bird => bird.primary_name.toLowerCase().includes(searchTerm));
-                showBirds(filteredBirds);
-            }
-
             showBirds(birdsData);
-            document.getElementById('filterInput').addEventListener('input', filter);
         })
         .catch(error => console.error(error))
 }
 
 fetchData();
 
+//filter birds based on given inputs
+function filter() {
+    const searchInput = document.getElementById('filterInput');
+    const searchTerm = searchInput.value.toLowerCase();
+
+    const filteredBirds = birdsData.filter(bird => bird.primary_name.toLowerCase().includes(searchTerm));
+    showBirds(filteredBirds);
+}
+
+document.getElementById('filterInput').addEventListener('input', filter);
+
+//handle sidebar when in mobile mode
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const sidebar = document.querySelector('.sidebar');
 const gridContainer = document.querySelector('.grid-container');
@@ -152,7 +160,6 @@ function handleWindowResize() {
 }
 
 window.addEventListener('resize', handleWindowResize);
-
 
 const searchButton = document.querySelector('.search-button');
 
