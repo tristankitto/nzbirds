@@ -6,18 +6,27 @@ body {
 
 header,
 footer {
-    background-color: #4baf31;
-    color: #ffffffbd;
+    background-color: #56c540;
+    color: #fffffff3;
     text-align: center;
     padding: 1px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     min-width: 98vw;
+}
+
+
+footer {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 3fr;
     min-height: 100vh;
+    flex: 1;
 }
 
 .hamburger-icon {
@@ -52,6 +61,7 @@ footer {
     margin-left: 15px;
     position: relative;
     overflow: hidden;
+    margin-bottom: 80px;
 }
 
 .grid-item {
@@ -59,7 +69,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
     min-width: 100px;
-    max-width: 500px;
+    max-width: 400px;
     height: 500px;
     border-radius: 15px;
     overflow: hidden;
@@ -69,14 +79,13 @@ footer {
 .grid-item img {
     width: 100%;
     height: 75%;
-    min-width: 5px;
     object-fit: cover;
     display: block;
 }
 
 .overlay {
     position: absolute;
-    width: 80%;
+    width: 100%;
     height: 100%;
     color: #ffffff;
     padding: 5% 10%;
@@ -88,76 +97,6 @@ footer {
 
 .overlay p {
     margin: 0;
-}
-
-@media (max-width: 860px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 40em) {
-
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid-item {
-        width: 200px;
-        height: 250px;
-        font-size: x-small;
-    }
-
-    #primary-name {
-        font-size: medium;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
-
-    .container {
-        display: block;
-    }
-
-    header {
-        position: sticky;
-        top: 0;
-        overflow-y: auto;
-        z-index: 9999;
-    }
-
-    footer {
-        position: sticky;
-        bottom: 0;
-        overflow-y: auto;
-        z-index: 9999;
-    }
-
-    .sidebar {
-        position: sticky;
-        top: 80px;
-        bottom: 100vh;
-        overflow-y: hidden;
-        min-height: 80vh;
-        width: 100vw;
-    }
-}
-
-@media (min-width: 40em) {
-
-    /* Show the sidebar and hide the hamburger icon when the screen width is below 768px */
-    .sidebar {
-        display: block;
-    }
-
-    .hamburger-icon {
-        display: none;
-    }
-
-    .container {
-        display: grid;
-    }
 }
 
 .credit {
@@ -207,4 +146,78 @@ hr {
     height: 1px;
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+@media (max-width: 860px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 40em) {
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-item {
+        max-width: 200px;
+        max-height: 250px;
+        font-size: x-small;
+    }
+
+    .credit {
+        font-size: xx-small;
+    }
+
+    #primary-name {
+        font-size: medium;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        display: block;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+        z-index: 9999;
+    }
+
+    footer {
+        position: sticky;
+        bottom: 0;
+        overflow-y: auto;
+        z-index: 9999;
+        font-size: 0.7em;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 80px;
+        bottom: 100vh;
+        height: 85vh;
+        width: 100vw;
+    }
+}
+
+@media (min-width: 40em) {
+
+    /* Show the sidebar and hide the hamburger icon when the screen width is below 768px */
+    .sidebar {
+        display: block;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+
+    .container {
+        display: grid;
+    }
 }
