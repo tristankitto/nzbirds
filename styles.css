@@ -35,7 +35,7 @@ footer {
 .hamburger-icon {
     position: absolute;
     top: 29%;
-    left: 5%;
+    left: 2%;
     width: 2px;
     font-size: 24px;
     color: black;
@@ -64,7 +64,6 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 10px;
-    margin-left: 15px;
     position: relative;
     overflow: hidden;
     margin-bottom: 80px;
@@ -108,7 +107,7 @@ footer {
     font-size: 35px;
     position: absolute;
     bottom: 22%;
-    left: 5%;
+    left: 2%;
     color: white;
     text-shadow: 4px 4px 5px black;
 }
@@ -244,11 +243,11 @@ select {
     }
 
     .credit {
-        font-size: xx-small;
+        font-size: 0.7em;
     }
 
     #primary-name {
-        font-size: medium;
+        font-size: small;
     }
 
     .secondary-info {
