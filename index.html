@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birds of Aotearoa</title>
     <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&family=Montserrat:wght@300&family=Roboto:wght@300&family=Ysabeau+SC&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -18,13 +21,46 @@
     <div class="container">
 
         <aside class="sidebar">
-            <h2>Filter</h2>
+            <h2 id="filter-title">Filter</h2>
+            <hr>
 
-            <div class="search">
-                <input type="text" placeholder="Search..." id="filterInput">
+            <div class="filter-select">
+                <div class="search">
+                    <p>Search</p>
+                    <hr>
+                    <input type="text" placeholder="Search..." id="filterInput">
+                </div>
+
+                <p>Status</p>
+                <hr>
+                <select>
+                    <option>All</option>
+                    <option>Not Threatened</option>
+                    <option>Naturally Uncommon</option>
+                    <option>Relict</option>
+                    <option>Recovering</option>
+                    <option>Declining</option>
+                    <option>Nationally Increasing</option>
+                    <option>Nationally Vulnerable</option>
+                    <option>Nationally Endangered</option>
+                    <option>Nationally Critical</option>
+                    <option>Data Deficient/Extinct</option>
+                </select>
+
+                <p>Sort By</p>
+                <hr>
+                <select>
+                    <option>Primary Name</option>
+                    <option>English Name</option>
+                    <option>Scientific Name</option>
+                    <option>Lightest to Heaviest</option>
+                    <option>Heaviest to Lightest</option>
+                    <option>Shortest to Longest</option>
+                    <option>Longest to Shortest</option>
+                </select>
             </div>
 
-            <hr />
+            <hr>
 
             <div class="status-key">
                 <h3>Conservation Status</h3>
@@ -57,7 +93,7 @@
                         <p><span class="status-dot key-dot natcri-dot"></span> Nationally Critical</p>
                     </li>
                     <li>
-                        <p><span class="status-dot key-dot datdef-dot"></span> Data Deficient</p>
+                        <p><span class="status-dot key-dot datdef-dot"></span> Data Deficient/Extinct</p>
                     </li>
                 </ul>
             </div>
