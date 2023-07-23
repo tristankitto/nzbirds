@@ -24,19 +24,18 @@
             <h2 id="filter-title">Filter</h2>
             <hr>
 
-            <div class="filter-select">
-                <div class="search">
-                    <p>Search</p>
+            <form class="filter-select">
+                <div class="filterInput">
+                    <label for="search">Search</label>
                     <hr>
                     <div class="search-container">
-                        <input type="text" placeholder="Search..." id="filterInput">
-                        <button class="search-button">&#128269;</button>
+                        <input type="text" placeholder="Search..." id="filterInput" name="filterInput">
                     </div>
                 </div>
 
-                <p>Status</p>
+                <label for="status">Status</label>
                 <hr>
-                <select>
+                <select id="status" name="status">
                     <option>All</option>
                     <option>Not Threatened</option>
                     <option>Naturally Uncommon</option>
@@ -50,9 +49,9 @@
                     <option>Data Deficient/Extinct</option>
                 </select>
 
-                <p>Sort By</p>
+                <label for="sort-by">Sort By</label>
                 <hr>
-                <select>
+                <select id="sort-by" name="sort-by">
                     <option>Primary Name</option>
                     <option>English Name</option>
                     <option>Scientific Name</option>
@@ -61,12 +60,14 @@
                     <option>Shortest to Longest</option>
                     <option>Longest to Shortest</option>
                 </select>
-            </div>
+
+                <button class="filter-button">Filter Results</button>
+            </form>
 
             <hr>
 
             <div class="status-key">
-                <h3>Conservation Status</h3>
+                <p id="status-title">Conservation Status</p>
                 <ul class="status-list">
                     <li>
                         <p><span class="status-dot key-dot notthr-dot"></span> Not Threatened</p>

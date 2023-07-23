@@ -174,7 +174,3 @@ function handleWindowResize() {
 }
 
 window.addEventListener('resize', handleWindowResize);
-
-const searchButton = document.querySelector('.search-button');
-
-searchButton.addEventListener('click', toggleSidebar);
