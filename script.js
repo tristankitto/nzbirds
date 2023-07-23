@@ -123,15 +123,18 @@ function toggleSidebar() {
 
 hamburgerIcon.addEventListener('click', toggleSidebar);
 
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 function handleWindowResize() {
-    if (window.innerWidth < (40 * fontSize)) {
+    if (window.innerWidth < (40 * fontSize) && !isMobileDevice()) {
         sidebar.style.display = 'none';
         gridContainer.style.display = 'grid';
         document.body.style.overflowY = 'visible';
-    }
-    else if (window.innerWidth >= (40 * fontSize)) {
+    } else if (window.innerWidth >= (40 * fontSize)) {
         sidebar.style.display = 'block';
         gridContainer.style.display = 'grid';
         document.body.style.overflowY = 'visible';

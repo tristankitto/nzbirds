@@ -12,13 +12,15 @@ footer {
     padding: 1px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header {
     min-width: 98vw;
 }
 
 
 footer {
-    width: 100vw;
-    position: fixed;
+    max-width: 100vw;
     bottom: 0;
 }
 
@@ -34,6 +36,7 @@ footer {
     top: 20px;
     left: 20px;
     font-size: 24px;
+    color: black;
     background: none;
     border: none;
     cursor: pointer;
@@ -190,6 +193,7 @@ hr {
     }
 
     footer {
+        width: 100vw;
         position: fixed;
         bottom: 0;
         overflow-y: auto;
