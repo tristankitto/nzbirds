@@ -258,6 +258,16 @@ select {
         width: 100vw;
         overflow-x: hidden;
     }
+
+    .status-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .status-list li {
+        width: 50%;
+        box-sizing: border-box;
+    }
 }
 
 @media (min-width: 40em) {
