@@ -234,6 +234,7 @@ select {
     }
 
     header {
+        font-size: 0.85em;
         position: sticky;
         top: 0;
         overflow-y: auto;
