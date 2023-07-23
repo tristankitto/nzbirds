@@ -198,11 +198,12 @@ hr {
     }
 
     .sidebar {
-        position: sticky;
+        position: fixed;
         top: 80px;
         bottom: 100vh;
-        height: 85vh;
+        min-height: 85vh;
         width: 100vw;
+        overflow-x: hidden;
     }
 }
 
