@@ -225,7 +225,7 @@ select {
     position: relative;
     max-width: 50%;
     margin-top: 5px;
-    font-size: 0.8em;
+    font-size: 0.83em;
     padding: 5px;
     left: 20%;
     right: 25%;
@@ -233,6 +233,7 @@ select {
     border: none;
     background-color: #56c540;
     color: #fffffff3;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .filter-select hr {

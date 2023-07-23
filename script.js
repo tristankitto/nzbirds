@@ -130,6 +130,12 @@ function filter() {
     const searchInput = document.getElementById('filterInput');
     const searchTerm = searchInput.value.toLowerCase().normalize('NFC');
 
+    const statusSelect = document.getElementById('status');
+    const selectedStatus = statusSelect.value;
+
+    const sortBySelect = document.getElementById('sort-by');
+    const selectedSortBy = sortBySelect.value;
+
     const filteredBirds = birdsData.filter(bird => {
         const primaryName = bird.primary_name.toLowerCase().normalize('NFC');
         const englishName = bird.english_name.toLowerCase();
@@ -147,15 +153,42 @@ function filter() {
 
         normalizedPrimaryName = primaryName.replace(/[āēīōū]/g, match => maoriCharacters[match]);
 
-        // Check if any of the fields match the search term
-        return (
+        const matchesSearchTerm = (
             normalizedPrimaryName.includes(searchTerm) ||
             englishName.includes(searchTerm) ||
             scientificName.includes(searchTerm) ||
             order.includes(searchTerm) ||
             family.includes(searchTerm)
         );
+
+        const matchesStatus = selectedStatus === 'All' || bird.status === selectedStatus;
+
+        return matchesSearchTerm && matchesStatus;
     });
+
+    switch (selectedSortBy) {
+        case 'Primary Name':
+            filteredBirds.sort((a, b) => a.primary_name.localeCompare(b.primary_name));
+            break;
+        case 'English Name':
+            filteredBirds.sort((a, b) => a.english_name.localeCompare(b.english_name));
+            break;
+        case 'Scientific Name':
+            filteredBirds.sort((a, b) => a.scientific_name.localeCompare(b.scientific_name));
+            break;
+        case 'Lightest to Heaviest':
+            filteredBirds.sort((a, b) => a.size.weight.value - b.size.weight.value);
+            break;
+        case 'Heaviest to Lightest':
+            filteredBirds.sort((a, b) => b.size.weight.value - a.size.weight.value);
+            break;
+        case 'Shortest to Longest':
+            filteredBirds.sort((a, b) => a.size.length.value - b.size.length.value);
+            break;
+        case 'Longest to Shortest':
+            filteredBirds.sort((a, b) => b.size.length.value - a.size.length.value);
+            break;
+    }
 
     showBirds(filteredBirds);
 }
