@@ -128,8 +128,12 @@ const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
 function handleWindowResize() {
     if (window.innerWidth < (40 * fontSize)) {
         sidebar.style.display = 'none';
+        gridContainer.style.display = 'grid';
+        document.body.style.overflowY = 'visible';
     } else if (window.innerWidth >= (40 * fontSize)) {
         sidebar.style.display = 'block';
+        gridContainer.style.display = 'none';
+        document.body.style.overflowY = 'hidden';
     }
 }
 
