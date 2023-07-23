@@ -69,6 +69,7 @@ footer {
     position: relative;
     overflow: hidden;
     margin-bottom: 80px;
+    min-height: 100vh;
 }
 
 .grid-item {
@@ -190,6 +191,17 @@ select {
     margin-bottom: 5px;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container button {
+    display: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .filter-select hr {
     width: 50%;
     margin-left: 0;
@@ -248,7 +260,7 @@ select {
         bottom: 0;
         overflow-y: auto;
         z-index: 9999;
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
 
     .sidebar {
@@ -269,6 +281,10 @@ select {
     .status-list li {
         width: 50%;
         box-sizing: border-box;
+    }
+
+    .search-container button {
+        display: flex;
     }
 }
 

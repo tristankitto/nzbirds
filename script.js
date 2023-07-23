@@ -6,6 +6,7 @@ function fetchData() {
             let birdsData = data;
 
             function showBirds(birds) {
+                birdsContainer.innerHTML = '';
 
                 birds.forEach(bird => {
                     const birdElement = document.createElement('div');
@@ -98,7 +99,16 @@ function fetchData() {
                 });
             }
 
+            function filter() {
+                const searchInput = document.getElementById('filterInput');
+                const searchTerm = searchInput.value.toLowerCase();
+
+                const filteredBirds = birdsData.filter(bird => bird.primary_name.toLowerCase().includes(searchTerm));
+                showBirds(filteredBirds);
+            }
+
             showBirds(birdsData);
+            document.getElementById('filterInput').addEventListener('input', filter);
         })
         .catch(error => console.error(error))
 }
@@ -142,3 +152,8 @@ function handleWindowResize() {
 }
 
 window.addEventListener('resize', handleWindowResize);
+
+
+const searchButton = document.querySelector('.search-button');
+
+searchButton.addEventListener('click', toggleSidebar);
