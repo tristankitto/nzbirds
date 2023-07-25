@@ -295,7 +295,7 @@ select {
     }
 
     .secondary-info {
-        font-size: xx-small;
+        font-size: 0.8em;
     }
 
     .secondary-titles {
