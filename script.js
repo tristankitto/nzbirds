@@ -1,6 +1,8 @@
-//define variables used inside fetchData function so they can be used again outside it.
+//define variables to be used later
 let birdsData = [];
 let showBirds;
+let isMobileFilter = false;
+const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 //fetch data from JSON file and create each bird on page
 function fetchData() {
@@ -104,8 +106,9 @@ function fetchData() {
                     photoCreditElement.textContent = bird.photo.credit;
 
                     overlayElement.appendChild(englishNameElement);
-                    secondaryInfo.appendChild(statusElement);
+
                     secondaryInfo.appendChild(scientificNameElement);
+                    secondaryInfo.appendChild(statusElement);
                     secondaryInfo.appendChild(weightElement);
                     secondaryInfo.appendChild(lengthElement);
                     overlayElement.appendChild(secondaryInfo);
@@ -118,7 +121,7 @@ function fetchData() {
                 });
             }
 
-            showBirds(birdsData);
+            filter();
         })
         .catch(error => console.error(error))
 }
@@ -142,6 +145,7 @@ function filter() {
         const scientificName = bird.scientific_name.toLowerCase();
         const order = bird.order.toLowerCase();
         const family = bird.family.toLowerCase();
+        const photoCredit = bird.photo.credit.toLowerCase();
 
         const maoriCharacters = {
             'ā': 'a',
@@ -151,14 +155,16 @@ function filter() {
             'ū': 'u',
         };
 
-        normalizedPrimaryName = primaryName.replace(/[āēīōū]/g, match => maoriCharacters[match]);
+        const normalizedPrimaryName = primaryName.replace(/[āēīōū]/g, match => maoriCharacters[match]);
 
         const matchesSearchTerm = (
             normalizedPrimaryName.includes(searchTerm) ||
             englishName.includes(searchTerm) ||
             scientificName.includes(searchTerm) ||
             order.includes(searchTerm) ||
-            family.includes(searchTerm)
+            family.includes(searchTerm) ||
+            photoCredit.includes(searchTerm) ||
+            bird.other_names.some(name => name.toLowerCase().includes(searchTerm))
         );
 
         const matchesStatus = selectedStatus === 'All' || bird.status === selectedStatus;
@@ -191,11 +197,22 @@ function filter() {
     }
 
     showBirds(filteredBirds);
+
+    if (isMobileFilter) {
+        toggleSidebar()
+        isMobileFilter = false;
+    }
 }
 
+function mobileFilter() {
+    isMobileFilter = true;
+    filter();
+}
 
-
-document.getElementById('filter-button').addEventListener('click', filter);
+document.getElementById('filterInput').addEventListener('input', filter);
+document.getElementById('status').addEventListener('input', filter);
+document.getElementById('sort-by').addEventListener('input', filter);
+document.getElementById('filter-button').addEventListener('click', mobileFilter);
 
 //handle sidebar when in mobile mode
 const hamburgerIcon = document.querySelector('.hamburger-icon');
@@ -219,8 +236,6 @@ hamburgerIcon.addEventListener('click', toggleSidebar);
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
-
-const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 function handleWindowResize() {
     if (window.innerWidth < (40 * fontSize) && !isMobileDevice()) {

@@ -222,6 +222,7 @@ select {
 }
 
 .filter-button {
+    display: none;
     position: relative;
     max-width: 50%;
     margin-top: 5px;
@@ -325,6 +326,10 @@ select {
 
     .search-container button {
         display: flex;
+    }
+
+    .filter-button {
+        display: block;
     }
 }
 
