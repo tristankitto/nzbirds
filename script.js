@@ -148,7 +148,7 @@ fetchData();
 
 //filter birds based on given inputs
 function filter() {
-    const searchInput = document.getElementById('filterInput');
+    const searchInput = document.getElementById('search');
     const searchTerm = searchInput.value.toLowerCase().normalize('NFC');
 
     const statusSelect = document.getElementById('status');
@@ -227,7 +227,7 @@ function mobileFilter() {
     filter();
 }
 
-document.getElementById('filterInput').addEventListener('input', filter);
+document.getElementById('search').addEventListener('input', filter);
 document.getElementById('status').addEventListener('input', filter);
 document.getElementById('sort-by').addEventListener('input', filter);
 document.getElementById('filter-button').addEventListener('click', mobileFilter);

@@ -235,7 +235,7 @@ select {
     margin-bottom: 5px;
 }
 
-.search-container {
+#search {
     display: flex;
     align-items: center;
 }
@@ -349,10 +349,6 @@ select {
     .status-list li {
         width: 50%;
         box-sizing: border-box;
-    }
-
-    .search-container button {
-        display: flex;
     }
 
     .filter-button {
