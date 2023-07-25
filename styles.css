@@ -98,9 +98,26 @@ footer {
 }
 
 .secondary-info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 3%;
+    left: 5%;
+    right: 5%;
+}
+
+.secondary-titles {
+    position: relative;
+    padding-top: 2%;
+    padding-right: 3%;
+    font-weight: 700;
+    color: black;
+}
+
+.secondary-values {
     padding-top: 2%;
     padding-left: 3%;
-    padding-right: 3%;
+    color: white;
 }
 
 #primary-name {
@@ -120,6 +137,8 @@ footer {
 
 #english-name {
     text-align: center;
+    height: 1%;
+    margin: 0;
 }
 
 .overlay p {

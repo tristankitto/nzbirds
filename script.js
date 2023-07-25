@@ -23,6 +23,10 @@ function fetchData() {
                     overlayElement.classList.add('overlay');
                     const secondaryInfo = document.createElement('div');
                     secondaryInfo.classList.add('secondary-info');
+                    const secondaryTitles = document.createElement('div');
+                    secondaryTitles.classList.add('secondary-titles');
+                    const secondaryValues = document.createElement('div');
+                    secondaryValues.classList.add('secondary-values');
                     const primaryNameElement = document.createElement('p');
                     primaryNameElement.id = 'primary-name';
                     const englishNameElement = document.createElement('p');
@@ -98,19 +102,33 @@ function fetchData() {
 
                     primaryNameElement.textContent = bird.primary_name;
                     englishNameElement.textContent = bird.english_name;
-                    statusElement.textContent = 'Status: ' + status;
-                    scientificNameElement.textContent = 'Scientific Name: ' + bird.scientific_name;
-                    weightElement.textContent = 'Weight: ' + bird.size.weight.value + bird.size.weight.units;
-                    lengthElement.textContent = 'Length: ' + bird.size.length.value + bird.size.length.units;
+                    statusElement.textContent = status;
+                    const statusTitle = document.createElement('p');
+                    statusTitle.textContent = 'Status';
+                    scientificNameElement.textContent = bird.scientific_name;
+                    const scientificTitle = document.createElement('p');
+                    scientificTitle.textContent = 'Scientific Name';
+                    weightElement.textContent = bird.size.weight.value + bird.size.weight.units;
+                    const weightTitle = document.createElement('p');
+                    weightTitle.textContent = 'Weight';
+                    lengthElement.textContent = bird.size.length.value + bird.size.length.units;
+                    const lengthTitle = document.createElement('p');
+                    lengthTitle.textContent = 'Length';
 
                     photoCreditElement.textContent = bird.photo.credit;
 
                     overlayElement.appendChild(englishNameElement);
 
-                    secondaryInfo.appendChild(scientificNameElement);
-                    secondaryInfo.appendChild(statusElement);
-                    secondaryInfo.appendChild(weightElement);
-                    secondaryInfo.appendChild(lengthElement);
+                    secondaryTitles.appendChild(scientificTitle);
+                    secondaryTitles.appendChild(statusTitle);
+                    secondaryTitles.appendChild(weightTitle);
+                    secondaryTitles.appendChild(lengthTitle);
+                    secondaryValues.appendChild(scientificNameElement);
+                    secondaryValues.appendChild(statusElement);
+                    secondaryValues.appendChild(weightElement);
+                    secondaryValues.appendChild(lengthElement);
+                    secondaryInfo.appendChild(secondaryTitles);
+                    secondaryInfo.appendChild(secondaryValues);
                     overlayElement.appendChild(secondaryInfo);
                     birdElement.appendChild(primaryNameElement);
                     birdElement.appendChild(photoCreditElement);
