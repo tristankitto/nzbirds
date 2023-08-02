@@ -330,23 +330,34 @@ select {
         min-width: 200px;
     }
 
+    .grid-item img {
+        height: 70%;
+    }
+
     .grid-item:hover {
         box-shadow: 2px 2px 10px #000000;
     }
 
     .grid-item:hover img {
-        height: 75%;
+        height: 70%;
     }
 
-    .grid-item:hover .hidden-titles,
-    .grid-item:hover .hidden-values {
-        opacity: none;
-        display: none;
+    #primary-name {
+        bottom: 32%;
+    }
+
+    .credit {
+        bottom: 30%;
     }
 
     .grid-item:hover #primary-name,
     .grid-item:hover .credit {
         transform: none;
+    }
+
+    .hidden-titles,
+    .hidden-values {
+        opacity: 1;
     }
 
     .secondary-titles {
