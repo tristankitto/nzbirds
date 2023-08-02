@@ -87,7 +87,7 @@ footer {
 
 .grid-item img {
     width: 100%;
-    height: 75%;
+    height: 80%;
     object-fit: cover;
     display: block;
     transition: height 0.45s ease-in-out;
@@ -108,7 +108,7 @@ footer {
 
 .grid-item:hover #primary-name,
 .grid-item:hover .credit {
-    transform: translateY(-55px);
+    transform: translateY(-75px);
 }
 
 .overlay {
@@ -170,7 +170,7 @@ footer {
     text-align: center;
     font-size: 30px;
     position: absolute;
-    bottom: 27%;
+    bottom: 22%;
     left: 2%;
     color: white;
     text-shadow: 4px 4px 10px black;
@@ -192,7 +192,7 @@ footer {
 .credit {
     position: absolute;
     max-width: 45%;
-    bottom: 25%;
+    bottom: 20%;
     right: 4px;
     padding: 1%;
     color: white;

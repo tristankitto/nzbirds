@@ -137,31 +137,23 @@ function fetchData() {
                     orderTitle.textContent = 'Order';
                     const orderElement = document.createElement('p');
                     orderElement.textContent = bird.order;
-                    // const otherNameTitle = document.createElement('p');
-                    // otherNameTitle.textContent = 'Other Name(s)';
-                    // const otherNameElement = document.createElement('p');
-                    // otherNameElement.textContent = bird.other_names;
-                    // otherNameElement.classList.add('other-name', 'other-name-element');
-                    // otherNameTitle.classList.add('other-name', 'other-name-title');
 
                     photoCreditElement.textContent = bird.photo.credit;
 
                     overlayElement.appendChild(englishNameElement);
 
-                    secondaryTitles.appendChild(scientificTitle);
                     secondaryTitles.appendChild(statusTitle);
-                    secondaryTitles.appendChild(weightTitle);
-                    secondaryTitles.appendChild(lengthTitle);
-                    secondaryValues.appendChild(scientificNameElement);
                     secondaryValues.appendChild(statusElement);
-                    secondaryValues.appendChild(weightElement);
-                    secondaryValues.appendChild(lengthElement);
+                    secondaryTitles.appendChild(scientificTitle);
+                    secondaryValues.appendChild(scientificNameElement);
                     hiddenSecondaryTitles.appendChild(familyTitle);
                     hiddenSecondaryValues.appendChild(familyElement);
                     hiddenSecondaryTitles.appendChild(orderTitle);
                     hiddenSecondaryValues.appendChild(orderElement);
-                    // hiddenSecondaryTitles.appendChild(otherNameTitle);
-                    // hiddenSecondaryValues.appendChild(otherNameElement);
+                    hiddenSecondaryTitles.appendChild(weightTitle);
+                    hiddenSecondaryTitles.appendChild(lengthTitle);
+                    hiddenSecondaryValues.appendChild(weightElement);
+                    hiddenSecondaryValues.appendChild(lengthElement);
                     secondaryTitles.appendChild(hiddenSecondaryTitles);
                     secondaryValues.appendChild(hiddenSecondaryValues);
                     secondaryInfo.appendChild(secondaryTitles);
