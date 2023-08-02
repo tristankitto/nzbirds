@@ -27,6 +27,10 @@ function fetchData() {
                     secondaryTitles.classList.add('secondary-titles');
                     const secondaryValues = document.createElement('div');
                     secondaryValues.classList.add('secondary-values');
+                    const hiddenSecondaryTitles = document.createElement('div');
+                    hiddenSecondaryTitles.classList.add('hidden-titles');
+                    const hiddenSecondaryValues = document.createElement('div');
+                    hiddenSecondaryValues.classList.add('hidden-values');
                     const primaryNameElement = document.createElement('p');
                     primaryNameElement.id = 'primary-name';
                     const englishNameElement = document.createElement('p');
@@ -110,6 +114,7 @@ function fetchData() {
                             break;
                     }
 
+
                     primaryNameElement.textContent = bird.primary_name;
                     englishNameElement.textContent = bird.english_name;
                     statusElement.textContent = status;
@@ -124,6 +129,20 @@ function fetchData() {
                     lengthElement.textContent = bird.size.length.value + bird.size.length.units;
                     const lengthTitle = document.createElement('p');
                     lengthTitle.textContent = 'Length';
+                    const familyTitle = document.createElement('p');
+                    familyTitle.textContent = 'Family';
+                    const familyElement = document.createElement('p');
+                    familyElement.textContent = bird.family;
+                    const orderTitle = document.createElement('p');
+                    orderTitle.textContent = 'Order';
+                    const orderElement = document.createElement('p');
+                    orderElement.textContent = bird.order;
+                    // const otherNameTitle = document.createElement('p');
+                    // otherNameTitle.textContent = 'Other Name(s)';
+                    // const otherNameElement = document.createElement('p');
+                    // otherNameElement.textContent = bird.other_names;
+                    // otherNameElement.classList.add('other-name', 'other-name-element');
+                    // otherNameTitle.classList.add('other-name', 'other-name-title');
 
                     photoCreditElement.textContent = bird.photo.credit;
 
@@ -137,6 +156,14 @@ function fetchData() {
                     secondaryValues.appendChild(statusElement);
                     secondaryValues.appendChild(weightElement);
                     secondaryValues.appendChild(lengthElement);
+                    hiddenSecondaryTitles.appendChild(familyTitle);
+                    hiddenSecondaryValues.appendChild(familyElement);
+                    hiddenSecondaryTitles.appendChild(orderTitle);
+                    hiddenSecondaryValues.appendChild(orderElement);
+                    // hiddenSecondaryTitles.appendChild(otherNameTitle);
+                    // hiddenSecondaryValues.appendChild(otherNameElement);
+                    secondaryTitles.appendChild(hiddenSecondaryTitles);
+                    secondaryValues.appendChild(hiddenSecondaryValues);
                     secondaryInfo.appendChild(secondaryTitles);
                     secondaryInfo.appendChild(secondaryValues);
                     overlayElement.appendChild(secondaryInfo);

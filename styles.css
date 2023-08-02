@@ -87,31 +87,28 @@ footer {
 
 .grid-item img {
     width: 100%;
-    height: 65%;
+    height: 75%;
     object-fit: cover;
     display: block;
     transition: height 0.45s ease-in-out;
 }
 
 .grid-item:hover img {
-    height: 100%;
+    height: 65%;
 }
 
 .grid-item:hover {
-    box-shadow: 4px 4px 10px var(--glow-colour);
+    box-shadow: 5px 5px 10px var(--glow-colour);
 }
 
 .grid-item #primary-name,
 .grid-item .credit {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.45s ease-in-out, transform 0.25s ease-in-out;
+    transition: transform 0.45s ease-in-out;
 }
 
 .grid-item:hover #primary-name,
 .grid-item:hover .credit {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-55px);
 }
 
 .overlay {
@@ -133,7 +130,6 @@ footer {
 }
 
 .secondary-titles {
-    position: relative;
     padding-top: 2%;
     padding-right: 3%;
     font-weight: 700;
@@ -146,13 +142,35 @@ footer {
     color: white;
 }
 
+
+.hidden-titles {
+    padding-top: 2%;
+    padding-right: 3%;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.45s ease-in-out;
+}
+
+.hidden-values {
+    padding-top: 2%;
+    padding-right: 3%;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.45s ease-in-out;
+}
+
+.grid-item:hover .hidden-titles,
+.grid-item:hover .hidden-values {
+    opacity: 1;
+}
+
 #primary-name {
     margin: 0;
     max-width: 60%;
     text-align: center;
     font-size: 30px;
     position: absolute;
-    bottom: 37%;
+    bottom: 27%;
     left: 2%;
     color: white;
     text-shadow: 4px 4px 10px black;
@@ -174,7 +192,7 @@ footer {
 .credit {
     position: absolute;
     max-width: 45%;
-    bottom: 35%;
+    bottom: 25%;
     right: 4px;
     padding: 1%;
     color: white;
@@ -308,16 +326,27 @@ select {
     }
 
     .grid-item {
-        font-size: x-small;
+        font-size: smaller;
         min-width: 200px;
     }
 
-    .credit {
-        font-size: 0.7em;
+    .grid-item:hover {
+        box-shadow: 2px 2px 10px #000000;
     }
 
-    #primary-name {
-        font-size: large;
+    .grid-item:hover img {
+        height: 75%;
+    }
+
+    .grid-item:hover .hidden-titles,
+    .grid-item:hover .hidden-values {
+        opacity: none;
+        display: none;
+    }
+
+    .grid-item:hover #primary-name,
+    .grid-item:hover .credit {
+        transform: none;
     }
 
     .secondary-titles {
