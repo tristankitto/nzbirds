@@ -443,8 +443,6 @@ select {
 }
 
 @media (min-width: 40em) {
-
-    /* Show the sidebar and hide the hamburger icon when the screen width is below 768px */
     .sidebar {
         display: block;
     }

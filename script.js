@@ -214,7 +214,7 @@ function filter() {
             order.includes(searchTerm) ||
             family.includes(searchTerm) ||
             photoCredit.includes(searchTerm) ||
-            bird.other_names.some(name => name.toLowerCase().includes(searchTerm))
+            bird.other_names.some(name => name.toLowerCase().normalize("NFC").replace(/[āēīōū]/g, match => maoriCharacters[match]).includes(searchTerm))
         );
 
         const matchesStatus = selectedStatus === 'All' || bird.status === selectedStatus;
