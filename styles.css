@@ -24,6 +24,14 @@ footer {
     bottom: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .container {
     font-family: 'Roboto', sans-serif;
     display: grid;
@@ -87,28 +95,18 @@ footer {
 
 .grid-item img {
     width: 100%;
-    height: 80%;
+    height: 75%;
     object-fit: cover;
     display: block;
     transition: height 0.45s ease-in-out;
 }
 
 .grid-item:hover img {
-    height: 65%;
+    height: 60%;
 }
 
 .grid-item:hover {
     box-shadow: 5px 5px 10px var(--glow-colour);
-}
-
-.grid-item #primary-name,
-.grid-item .credit {
-    transition: transform 0.45s ease-in-out;
-}
-
-.grid-item:hover #primary-name,
-.grid-item:hover .credit {
-    transform: translateY(-75px);
 }
 
 .overlay {
@@ -126,7 +124,7 @@ footer {
     align-items: center;
     flex-direction: row;
     padding-left: 5%;
-    top: 3%;
+    top: 11%;
 }
 
 .secondary-titles {
@@ -164,41 +162,51 @@ footer {
     opacity: 1;
 }
 
+.status-list:hover p {
+    cursor: pointer;
+}
+
 #primary-name {
     margin: 0;
-    max-width: 60%;
-    text-align: center;
-    font-size: 30px;
-    position: absolute;
-    bottom: 22%;
-    left: 2%;
+    font-size: 22px;
     color: white;
     text-shadow: 4px 4px 10px black;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 15%;
-    padding: 1%;
+}
+
+.credit {
+    margin: 0;
+    font-size: x-small;
+    color: white;
+}
+
+.name-credit {
+    margin: 0;
+    width: 90%;
+    height: 15%;
+    padding: 0 5%;
+    padding-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    position: absolute;
+    text-align: center;
+    top: 0%;
+    height: 6%;
+    margin: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
 }
 
 #english-name {
     text-align: center;
     height: 1%;
     margin: 0;
+    position: relative;
+    top: 8%;
 }
 
 .overlay p {
     margin: 0;
-}
-
-.credit {
-    position: absolute;
-    max-width: 45%;
-    bottom: 20%;
-    right: 4px;
-    padding: 1%;
-    color: white;
-    font-size: x-small;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10%;
 }
 
 .primary-name {
@@ -263,7 +271,8 @@ input {
     border-width: 1px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     padding: 0 10px;
-    margin: 5px 0;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 select {
@@ -276,7 +285,7 @@ select {
     border-width: 1px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     padding: 0 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 #search {
@@ -331,7 +340,8 @@ select {
     }
 
     .grid-item img {
-        height: 70%;
+        height: 62%;
+        transition: height 0s ease-in;
     }
 
     .grid-item:hover {
@@ -339,10 +349,12 @@ select {
     }
 
     .grid-item:hover img {
-        height: 70%;
+        height: 62%;
+        transition: 0s;
     }
 
     #primary-name {
+        font-size: 18px;
         bottom: 32%;
     }
 

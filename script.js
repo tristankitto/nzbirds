@@ -19,6 +19,8 @@ function fetchData() {
                     const birdElement = document.createElement('div');
                     birdElement.classList.add('grid-item');
                     const imageElement = document.createElement('img');
+                    const nameCreditElement = document.createElement('div');
+                    nameCreditElement.classList.add('name-credit');
                     const overlayElement = document.createElement('div');
                     overlayElement.classList.add('overlay');
                     const secondaryInfo = document.createElement('div');
@@ -142,6 +144,8 @@ function fetchData() {
 
                     overlayElement.appendChild(englishNameElement);
 
+                    nameCreditElement.appendChild(primaryNameElement);
+                    nameCreditElement.appendChild(photoCreditElement);
                     secondaryTitles.appendChild(statusTitle);
                     secondaryValues.appendChild(statusElement);
                     secondaryTitles.appendChild(scientificTitle);
@@ -156,11 +160,10 @@ function fetchData() {
                     hiddenSecondaryValues.appendChild(lengthElement);
                     secondaryTitles.appendChild(hiddenSecondaryTitles);
                     secondaryValues.appendChild(hiddenSecondaryValues);
+                    overlayElement.appendChild(nameCreditElement);
                     secondaryInfo.appendChild(secondaryTitles);
                     secondaryInfo.appendChild(secondaryValues);
                     overlayElement.appendChild(secondaryInfo);
-                    birdElement.appendChild(primaryNameElement);
-                    birdElement.appendChild(photoCreditElement);
                     birdElement.appendChild(imageElement);
                     birdElement.appendChild(overlayElement);
                     birdElement.appendChild(statusDot);
@@ -249,6 +252,17 @@ function filter() {
         toggleSidebar()
         isMobileFilter = false;
     }
+}
+
+function filterByStatus(status) {
+    const statusSelect = document.getElementById('status');
+    if (statusSelect.value == status) {
+        statusSelect.value = "All";
+        filter();
+        return;
+    }
+    statusSelect.value = status;
+    filter();
 }
 
 function mobileFilter() {
