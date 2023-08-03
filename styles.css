@@ -220,6 +220,12 @@ a:hover {
     padding-left: 0;
 }
 
+.status-list li,
+.status-list p {
+    line-height: 2;
+    margin: 0;
+}
+
 .status-dot {
     position: relative;
     top: 2px;
@@ -423,6 +429,12 @@ select {
     .status-list li {
         width: 50%;
         box-sizing: border-box;
+    }
+
+    .status-list li,
+    .status-list p {
+        line-height: 1.7;
+        margin: 0;
     }
 
     .filter-button {
