@@ -180,8 +180,16 @@ fetchData();
 
 //filter birds based on given inputs
 function filter() {
+    const maoriCharacters = {
+        'ā': 'a',
+        'ē': 'e',
+        'ī': 'i',
+        'ō': 'o',
+        'ū': 'u',
+    };
+
     const searchInput = document.getElementById('search');
-    const searchTerm = searchInput.value.toLowerCase().normalize('NFC');
+    const searchTerm = searchInput.value.toLowerCase().normalize('NFC').replace(/[āēīōū]/g, match => maoriCharacters[match]);
 
     const statusSelect = document.getElementById('status');
     const selectedStatus = statusSelect.value;
@@ -196,14 +204,6 @@ function filter() {
         const order = bird.order.toLowerCase();
         const family = bird.family.toLowerCase();
         const photoCredit = bird.photo.credit.toLowerCase();
-
-        const maoriCharacters = {
-            'ā': 'a',
-            'ē': 'e',
-            'ī': 'i',
-            'ō': 'o',
-            'ū': 'u',
-        };
 
         const normalizedPrimaryName = primaryName.replace(/[āēīōū]/g, match => maoriCharacters[match]);
 

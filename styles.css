@@ -4,9 +4,8 @@ body {
     padding: 0;
 }
 
-header,
-footer {
-    background-color: #56c540;
+header {
+    background-color: #ffd966;
     color: #fffffff3;
     text-align: center;
     padding: 1px;
@@ -17,11 +16,6 @@ footer {
 header {
     font-family: 'Ysabeau SC', sans-serif;
     font-size: 1.01em;
-}
-
-footer {
-    max-width: 100vw;
-    bottom: 0;
 }
 
 a {
@@ -60,7 +54,7 @@ a:hover {
     object-fit: contain;
     padding-left: 5%;
     box-shadow: 1px 0 5px #00000079;
-    background-color: #9dc18356;
+    background-color: #f8d775a1;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -400,15 +394,6 @@ select {
         top: 0;
         overflow-y: auto;
         z-index: 9999;
-    }
-
-    footer {
-        width: 100vw;
-        position: fixed;
-        bottom: 0;
-        overflow-y: auto;
-        z-index: 9999;
-        font-size: 0.6em;
     }
 
     .sidebar {
